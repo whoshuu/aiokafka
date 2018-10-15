@@ -374,6 +374,7 @@ class AIOKafkaProducer(object):
                     task.result()
 
                 tasks -= done
+                asyncio.sleep(0.001)
 
         except asyncio.CancelledError:
             # done tasks should never produce errors, if they are it's a bug
